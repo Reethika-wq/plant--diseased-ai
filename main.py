@@ -1,4 +1,6 @@
 import streamlit as st
+import tensorflow as tf
+import numpy as np
 hide_style = """
     <style>
     #MainMenu {visibility: hidden;}
@@ -6,9 +8,14 @@ hide_style = """
     header {visibility: hidden;}
     </style>
     """
+
+hide_dev_button = """
+    <style>
+    .stDeployButton {display:none;}
+    </style>
+    """
 st.markdown(hide_style, unsafe_allow_html=True)
-import tensorflow as tf
-import numpy as np
+
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_plant_disease_model.keras")
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
