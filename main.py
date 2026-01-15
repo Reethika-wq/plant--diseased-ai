@@ -29,7 +29,7 @@ if app_mode == "HOME":
     st.markdown("<h1 style='text-align: center; color: #4CAF50;'>AgroAI: Smart Disease Detection</h1>", unsafe_allow_html=True)
     
     # 2. Sub-headings
-    st.markdown("<h4 style='text-align: center;'>Empowering Farmers with AI-Powered Plant Disease Recognition.</h4>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Empowering Farmers with AI-Powered Plant Disease Recognition.</p>", unsafe_allow_html=True)
     st.markdown("<p style='text-align: center;'>Upload plant images to detect diseases accurately and access actionable insights.</p>", unsafe_allow_html=True)
 
     st.write("---") # Add a divider line
