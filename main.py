@@ -30,9 +30,9 @@ st.markdown(hide_dev_button, unsafe_allow_html=True)
 # display image using streamlit
 # width is used to set the width of an image
 
-    if(app_mode=="HOME"):
+if(app_mode=="HOME"):
     # Change this line to include AgroAI
-    st.markdown("<h1 style='text-align: center;'>AgroAI: SMART DISEASE DETECTION</h1>", unsafe_allow_html=True)
+  st.markdown("<h1 style='text-align: center;'>AgroAI: SMART DISEASE DETECTION</h1>", unsafe_allow_html=True)
     
 #Prediction Page
 elif(app_mode=="DISEASE RECOGNITION"):
