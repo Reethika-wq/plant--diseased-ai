@@ -1,4 +1,11 @@
 import streamlit as st
+hide_style = """
+    <style>
+    #MainMenu {visibility: hidden;}
+    footer {visibility: hidden;}
+    header {visibility: hidden;}
+    </style>
+    """
 st.markdown(hide_style, unsafe_allow_html=True)
 import tensorflow as tf
 import numpy as np
