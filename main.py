@@ -1,21 +1,6 @@
 import streamlit as st
 import tensorflow as tf
 import numpy as np
-hide_style = """
-    <style>
-    #MainMenu {visibility: hidden;}
-    footer {visibility: hidden;}
-    header {visibility: hidden;}
-    </style>
-    """
-
-hide_dev_button = """
-    <style>
-    .stDeployButton {display:none;}
-    </style>
-    """
-st.markdown(hide_style, unsafe_allow_html=True)
-
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_plant_disease_model.keras")
     image = tf.keras.preprocessing.image.load_img(test_image,target_size=(128,128))
@@ -25,14 +10,7 @@ def model_prediction(test_image):
     return np.argmax(predictions) #return index of max element
 
 #Sidebar
-st.sidebar.title("AgroAI")
-st.markdown("""
-    <style>
-    footer {visibility: hidden;}
-    .stDeployButton {display:none;}
-    </style>
-    """, unsafe_allow_html=True)
-
+st.sidebar.title("AgriSens")
 app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 #app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recognition"])
 
@@ -40,13 +18,13 @@ app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 from PIL import Image
 img = Image.open("Diseases.png")
 
-st.markdown(hide_dev_button, unsafe_allow_html=True)
 # display image using streamlit
 # width is used to set the width of an image
+st.image(img)
 
+#Main Page
 if(app_mode=="HOME"):
-    # Change this line to include AgroAI
-  st.markdown("<h1 style='text-align: center;'>AgroAI: SMART DISEASE DETECTION</h1>", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'>SMART DISEASE DETECTION", unsafe_allow_html=True)
     
 #Prediction Page
 elif(app_mode=="DISEASE RECOGNITION"):
