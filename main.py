@@ -56,7 +56,7 @@ if app_mode == "HOME":
     st.write("---")
 
     # 4. How It Works Section
-    st.markdown("How It Works")
+    st.markdown("## How It Works")
     st.markdown("""
     1.  Navigate to the Disease Recognition page.
     2.  Upload an image of the affected plant leaf.
