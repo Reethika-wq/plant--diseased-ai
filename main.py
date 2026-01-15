@@ -24,7 +24,7 @@ st.image(img)
 
 #Main Page
 if(app_mode=="HOME"):
-    st.markdown("<h1 style='text-align: center;'>SMART DISEASE DETECTION", unsafe_allow_html=True)
+    st.markdown("<h1 style='text-align: center;'> AGROAI: SMART DISEASE DETECTION", unsafe_allow_html=True)
     
 #Prediction Page
 elif(app_mode=="DISEASE RECOGNITION"):
@@ -34,7 +34,6 @@ elif(app_mode=="DISEASE RECOGNITION"):
         st.image(test_image,width=4,use_column_width=True)
     #Predict button
     if(st.button("Predict")):
-        st.snow()
         st.write("Our Prediction")
         result_index = model_prediction(test_image)
         #Reading Labels
