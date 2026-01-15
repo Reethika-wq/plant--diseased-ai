@@ -23,8 +23,45 @@ img = Image.open("Diseases.png")
 st.image(img)
 
 #Main Page
-if(app_mode=="HOME"):
-    st.markdown("<h1 style='text-align: center;'> AGROAI: SMART DISEASE DETECTION", unsafe_allow_html=True)
+# --- HOME PAGE ---
+if app_mode == "HOME":
+    # 1. Main Title with green color
+    st.markdown("<h1 style='text-align: center; color: #4CAF50;'>AgroAI: Smart Disease Detection</h1>", unsafe_allow_html=True)
+    
+    # 2. Sub-headings
+    st.markdown("<h4 style='text-align: center;'>Empowering Farmers with AI-Powered Plant Disease Recognition.</h4>", unsafe_allow_html=True)
+    st.markdown("<p style='text-align: center;'>Upload plant images to detect diseases accurately and access actionable insights.</p>", unsafe_allow_html=True)
+
+    st.write("---") # Add a divider line
+
+    # 3. Features Section (3 Columns)
+    st.markdown("## Features")
+    col1, col2, col3 = st.columns(3)
+
+    with col1:
+        st.image("feat-1.jpg", use_container_width=True)
+        st.markdown("<p style='text-align: center;'><b>Disease Detection</b></p>", unsafe_allow_html=True)
+        st.write("Identify plant diseases with AI.")
+
+    with col2:
+        st.image("feat-2.jpg", use_container_width=True)
+        st.markdown("<p style='text-align: center;'><b>Actionable Insights</b></p>", unsafe_allow_html=True)
+        st.write("Get disease details and remedies.")
+
+    with col3:
+        st.image("feat-3.jpg", use_container_width=True)
+        st.markdown("<p style='text-align: center;'><b>Real-Time Results</b></p>", unsafe_allow_html=True)
+        st.write("Receive instant predictions.")
+
+    st.write("---")
+
+    # 4. How It Works Section
+    st.markdown("## How It Works")
+    st.markdown("""
+    1.  **Navigate** to the "Disease Recognition" page.
+    2.  **Upload** an image of the affected plant leaf.
+    3.  **Get instant results** along with disease information and treatment suggestions.
+    """)
     
 #Prediction Page
 elif(app_mode=="DISEASE RECOGNITION"):
