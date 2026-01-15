@@ -21,6 +21,7 @@ app_mode = st.selectbox("Select a Page", ["HOME", "DISEASE RECOGNITION"])
 # display image using streamlit
 # width is used to set the width of an image
 st.image(img)
+app_mode = st.selectbox("Select a Page", ["HOME", "DISEASE RECOGNITION"])
 
 #Main Page
 # --- HOME PAGE ---
