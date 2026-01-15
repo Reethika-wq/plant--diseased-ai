@@ -65,7 +65,7 @@ if app_mode == "HOME":
     
 #Prediction Page
 elif(app_mode=="DISEASE RECOGNITION"):
-    st.header("DISEASE RECOGNITION")
+    st.markdown("<h1 style='text-align: center; color: #4CAF50;'>Disease Recognition</h1>", unsafe_allow_html=True)
     test_image = st.file_uploader("Choose an Image:")
     if(st.button("Show Image")):
         st.image(test_image,width=4,use_column_width=True)
