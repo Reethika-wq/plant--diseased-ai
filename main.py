@@ -10,14 +10,14 @@ def model_prediction(test_image):
     return np.argmax(predictions) #return index of max element
 
 #Sidebar
-st.sidebar.title("AgriSens")
-app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
+
 #app_mode = st.sidebar.selectbox("Select Page",["Home","About","Disease Recognition"])
 
 # import Image from pillow to open images
 from PIL import Image
 img = Image.open("Diseases.png")
-
+st.sidebar.title("AgroAI")
+app_mode = st.sidebar.selectbox("Select Page",["HOME","DISEASE RECOGNITION"])
 # display image using streamlit
 # width is used to set the width of an image
 st.image(img)
