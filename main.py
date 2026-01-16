@@ -112,7 +112,7 @@ elif(app_mode=="DISEASE RECOGNITION"):
                     'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus',
                       'Tomato___healthy']
         st.success("Model is Predicting it's a {}".format(class_name[result_index]))
-          info_text = get_about_info(predicted_name)
+        info_text = get_about_info(predicted_name)
         
         # 2. Clean name for UI display
         display_title = predicted_name.replace("___", " ").replace("_", " ")
