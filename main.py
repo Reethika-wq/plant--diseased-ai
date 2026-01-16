@@ -60,7 +60,7 @@ if app_mode == "HOME":
     st.markdown("""
     1.  Navigate to the Disease Recognition page.
     2.  Upload an image of the affected plant leaf.
-    3.  Get instant results** along with disease information and treatment suggestions.
+    3.  Get instant results along with disease information and treatment suggestions.
     """)
     
 #Prediction Page
