@@ -5,24 +5,17 @@ import re
 
 # --- STEP 1: ADD SEARCH FUNCTION ---
 def get_about_info(prediction_name, filename="DISEASE-GUIDE.md"):
-    """Searches your DISEASE-GUIDE.md file for the specific disease."""
     try:
         with open(filename, "r", encoding="utf-8") as f:
             content = f.read()
-        
-        # Split the file by your '###' headers
         sections = content.split("###")
-        
         for section in sections:
-            # Match the prediction name (e.g., Apple___Apple_scab) inside the section
             if prediction_name.lower() in section.lower():
-                # Get all text after the header line
                 lines = section.strip().split('\n')
                 return "\n".join(lines[1:])
-                
         return "No additional information found for this variety."
-    except FileNotFoundError:
-        return "Error: 'DISEASE-GUIDE.md' not found. Please upload it to the app folder."
+    except Exception:
+        return "Please ensure 'DISEASE-GUIDE.md' is in the same folder as this app."
 
 def model_prediction(test_image):
     model = tf.keras.models.load_model("trained_plant_disease_model.keras")
@@ -111,18 +104,13 @@ elif(app_mode=="DISEASE RECOGNITION"):
                     'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 
                     'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus',
                       'Tomato___healthy']
-        st.success("Model is Predicting it's a {}".format(class_name[result_index]))
-        info_text = get_about_info(predicted_name)
-        
-        # 2. Clean name for UI display
-        display_title = predicted_name.replace("___", " ").replace("_", " ")
-        
-        # 3. Create the collapsible box
-        with st.expander(f"About {display_title}"):
-            st.markdown(info_text)
-        predicted_name = class_name[result_index]
-        info_text = get_about_info(predicted_name)
-        display_title = predicted_name.replace("___", " ").replace("_", " ")
+         predicted_name = class_name[result_index]
+        st.success(f"Model is Predicting it's a {predicted_name}")
 
+        # 2. Get Info from Guide
+        info_text = get_about_info(predicted_name)
+        
+        # 3. Create 'About' Box (UI)
+        display_title = predicted_name.replace("___", " ").replace("_", " ")
         with st.expander(f"About {display_title}"):
             st.markdown(info_text)
