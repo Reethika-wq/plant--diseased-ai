@@ -120,3 +120,9 @@ elif(app_mode=="DISEASE RECOGNITION"):
         # 3. Create the collapsible box
         with st.expander(f"About {display_title}"):
             st.markdown(info_text)
+        predicted_name = class_name[result_index]
+        info_text = get_about_info(predicted_name)
+        display_title = predicted_name.replace("___", " ").replace("_", " ")
+
+        with st.expander(f"About {display_title}"):
+            st.markdown(info_text)
