@@ -104,7 +104,7 @@ elif(app_mode=="DISEASE RECOGNITION"):
                     'Tomato___Septoria_leaf_spot', 'Tomato___Spider_mites Two-spotted_spider_mite', 
                     'Tomato___Target_Spot', 'Tomato___Tomato_Yellow_Leaf_Curl_Virus', 'Tomato___Tomato_mosaic_virus',
                       'Tomato___healthy']
-         predicted_name = class_name[result_index]
+        predicted_name = class_name[result_index]
         st.success(f"Model is Predicting it's a {predicted_name}")
 
         # 2. Get Info from Guide
